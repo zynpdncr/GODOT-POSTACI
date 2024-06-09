@@ -1,0 +1,191 @@
+[gd_scene load_steps=25 format=3 uid="uid://cpydnur3n7m4p"]
+
+[ext_resource type="Texture2D" uid="uid://bo31wxkgic1nt" path="res://light-blue-background-abstract-pastel-vector-23059652.jpg" id="1_ldd1n"]
+[ext_resource type="Script" path="res://MAP SCENE.gd" id="1_omwal"]
+[ext_resource type="Texture2D" uid="uid://clefhsg0dj5ev" path="res://Ekran_görüntüsü_2024-06-09_183351-removebg-preview.png" id="1_xtq2m"]
+[ext_resource type="Theme" uid="uid://b1njl5bjtj4wy" path="res://default 2.tres" id="2_66e4w"]
+[ext_resource type="Texture2D" uid="uid://dagc8quy1m2pu" path="res://kiki_idle_.webp" id="2_mtpb1"]
+[ext_resource type="Texture2D" uid="uid://2hqgu6le1hgc" path="res://Ekran_görüntüsü_2024-06-09_181115-removebg-preview (1).png" id="3_ahrro"]
+[ext_resource type="AudioStream" uid="uid://dt1swetw7qp4r" path="res://always with me flute - spirited away (320).mp3" id="6_y0ubf"]
+[ext_resource type="Texture2D" uid="uid://biekag1ts2how" path="res://Grass-Buttons-arrow.png" id="7_7llrp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhpdx"]
+texture = ExtResource("7_7llrp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6c2va"]
+texture = ExtResource("7_7llrp")
+region_rect = Rect2(-16.5, -16, 114, 121)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gv255"]
+texture = ExtResource("7_7llrp")
+
+[sub_resource type="GDScript" id="GDScript_tdf8p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3et45"]
+texture = ExtResource("3_ahrro")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2gsw"]
+texture = ExtResource("3_ahrro")
+region_rect = Rect2(-12, -17, 97, 126)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xar7d"]
+texture = ExtResource("3_ahrro")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en1i8"]
+atlas = ExtResource("2_mtpb1")
+region = Rect2(0, 0, 288, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2q8h"]
+atlas = ExtResource("2_mtpb1")
+region = Rect2(288, 0, 288, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d11hs"]
+atlas = ExtResource("2_mtpb1")
+region = Rect2(576, 0, 288, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0vtr"]
+atlas = ExtResource("2_mtpb1")
+region = Rect2(864, 0, 288, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x4ok"]
+atlas = ExtResource("2_mtpb1")
+region = Rect2(1152, 0, 288, 287)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqkui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en1i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2q8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d11hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0vtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x4ok")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qps1l"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_8fe13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyf7i"]
+_data = {
+"Idle": SubResource("Animation_qps1l"),
+"RESET": SubResource("Animation_8fe13")
+}
+
+[node name="MAP" type="Node2D"]
+script = ExtResource("1_omwal")
+
+[node name="Light-blue-background-abstract-pastel-vector-23059652" type="Sprite2D" parent="."]
+position = Vector2(1083.5, 711.5)
+scale = Vector2(2.72782, 3.046)
+texture = ExtResource("1_ldd1n")
+
+[node name="EkranGörüntüsü2024-06-09183351-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(965, 585)
+scale = Vector2(3.06081, 2.45436)
+texture = ExtResource("1_xtq2m")
+
+[node name="back button" type="Button" parent="."]
+offset_left = 1611.0
+offset_top = 13.0
+offset_right = 1709.0
+offset_bottom = 114.0
+theme = ExtResource("2_66e4w")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lhpdx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6c2va")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gv255")
+script = SubResource("GDScript_tdf8p")
+
+[node name="LEVEL 1" type="Button" parent="."]
+offset_left = 443.0
+offset_top = 586.0
+offset_right = 580.0
+offset_bottom = 740.0
+theme = ExtResource("2_66e4w")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3et45")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c2gsw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xar7d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(781, 549)
+scale = Vector2(0.852159, 0.970683)
+sprite_frames = SubResource("SpriteFrames_qqkui")
+animation = &"Idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_oyf7i")
+}
+autoplay = "Idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_y0ubf")
+autoplay = true
+
+[connection signal="pressed" from="back button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="back button" to="back button" method="_on_pressed"]
+[connection signal="pressed" from="LEVEL 1" to="." method="_on_level_1_pressed"]

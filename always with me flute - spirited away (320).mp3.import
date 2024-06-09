@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dt1swetw7qp4r"
+path="res://.godot/imported/always with me flute - spirited away (320).mp3-9b474f54edc64a2bb82947f1d5f89dbf.mp3str"
+
+[deps]
+
+source_file="res://always with me flute - spirited away (320).mp3"
+dest_files=["res://.godot/imported/always with me flute - spirited away (320).mp3-9b474f54edc64a2bb82947f1d5f89dbf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

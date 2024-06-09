@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b15h5hophp0w5"
+path="res://.godot/imported/birinci level ses.mp3-aa7788f969a6401660742f2fcaf1502a.mp3str"
+
+[deps]
+
+source_file="res://birinci level ses.mp3"
+dest_files=["res://.godot/imported/birinci level ses.mp3-aa7788f969a6401660742f2fcaf1502a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
